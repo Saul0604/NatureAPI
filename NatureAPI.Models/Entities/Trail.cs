@@ -10,4 +10,6 @@ public class Trail
     public string Difficulty { get; set; }
     public string Path { get; set; }
     public bool IsLoop { get; set; }
+
+    public Place Place { get; set; }
 }

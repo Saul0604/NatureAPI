@@ -13,4 +13,9 @@ public class Place
     public double EntryFee { get; set; }
     public string OpeningHours { get; set; }
     public DateTime CreatedAt { get; set; }
+
+    public List<Trail> Trails { get; set; }
+    public List<Photo> Photos { get; set; }
+    public List<Review> Reviews { get; set; }
+    public List<PlaceAmenity> PlaceAmenities { get; set; }
 }
