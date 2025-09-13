@@ -105,5 +105,19 @@ public class NatureDbContext : DbContext
             new Amenity{ Id = 9, Name = "Área de Observación" },
             new Amenity{ Id = 10, Name = "Wi-Fi" }
         );
+        
+        // Seed de PlaceAmenities
+        modelBuilder.Entity<PlaceAmenity>().HasData(
+            new PlaceAmenity{ PlaceId = 1, AmenityId = 1 },
+            new PlaceAmenity{ PlaceId = 1, AmenityId = 2 },
+            new PlaceAmenity{ PlaceId = 2, AmenityId = 1 },
+            new PlaceAmenity{ PlaceId = 2, AmenityId = 3 },
+            new PlaceAmenity{ PlaceId = 3, AmenityId = 3 },
+            new PlaceAmenity{ PlaceId = 4, AmenityId = 2 },
+            new PlaceAmenity{ PlaceId = 5, AmenityId = 1 },
+            new PlaceAmenity{ PlaceId = 6, AmenityId = 3 },
+            new PlaceAmenity{ PlaceId = 7, AmenityId = 2 },
+            new PlaceAmenity{ PlaceId = 8, AmenityId = 1 }
+        );
     }
 }
