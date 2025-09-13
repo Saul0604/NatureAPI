@@ -14,4 +14,5 @@ public class PlaceDto
     public string OpeningHours { get; set; }
 
     public List<TrailDto> Trails { get; set; }
+    public List<PhotoDto> Photos { get; set; }
 }
