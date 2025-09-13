@@ -78,6 +78,18 @@ public class NatureDbContext : DbContext
             new Trail{ Id = 10, PlaceId = 9, Name = "Subida Peña", DistanceKm = 1.8, EstimatedTimeMinutes = 50, Difficulty = "Media", Path = "[[19.1180, -99.7670], [19.1200, -99.7650], [19.1220, -99.7630], [19.1180, -99.7670]]", IsLoop = true}
         );
         
-        
+        // Seed de Photos
+        modelBuilder.Entity<Photo>().HasData(
+            new Photo{ Id = 1, PlaceId = 1, Url = "https://www.gob.mx/cms/uploads/article/main_image/27513/blog_izta_popo.jpg"},
+            new Photo{ Id = 2, PlaceId = 2, Url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRN5dNWqAwUhFHJpo0EaIQdx_tsnLG-FrjaQ&s"},
+            new Photo{ Id = 3, PlaceId = 3, Url = "https://imggraficos.gruporeforma.com/2023/06/2-2.jpg"},
+            new Photo{ Id = 4, PlaceId = 4, Url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI_2vrL7aIS0K2cWYlFutIDKF31_RjAhifOg&s"},
+            new Photo{ Id = 5, PlaceId = 5, Url = "https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2024/12/cascada-de-basaseachi1.jpg?fit=1500%2C1610&ssl=1"},
+            new Photo{ Id = 6, PlaceId = 6, Url = "https://offloadmedia.feverup.com/guadalajarasecreta.com/wp-content/uploads/2022/10/07033934/cerro-de-la-bufa.jpg"},
+            new Photo{ Id = 7, PlaceId = 7, Url = "https://www.gob.mx/cms/uploads/article/main_image/28051/blog_PNCM.jpg"},
+            new Photo{ Id = 8, PlaceId = 8, Url = "https://www.mexicodesconocido.com.mx/sites/default/files/nodes/1024/piedra-volada.jpg"},
+            new Photo{ Id = 9, PlaceId = 9, Url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Mirador_de_la_Pe%C3%B1a.jpg/1200px-Mirador_de_la_Pe%C3%B1a.jpg"},
+            new Photo{ Id = 10, PlaceId = 10, Url = "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/201000/201283-Nevado-De-Toluca-National-Park.jpg"}
+        );
     }
 }
