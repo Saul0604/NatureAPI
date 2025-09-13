@@ -60,5 +60,23 @@ namespace NatureAPI.Controllers
 
             return place;
         }
+        
+        // POST /api/places
+        [HttpPost]
+        public async Task<ActionResult<Place>> CreatePlace(Place place)
+        {
+            // Validar altitud y longitud
+            if (place.Latitude < -90 || place.Latitude > 90)
+                return BadRequest("Latitude must be between -90 and 90.");
+            if (place.Longitude < -180 || place.Longitude > 180)
+                return BadRequest("Longitude must be between -180 and 180.");
+            
+            place.CreatedAt = DateTime.Now;
+
+            _context.Places.Add(place);
+            await _context.SaveChangesAsync();
+            
+            return CreatedAtAction(nameof(GetPlace), new { id = place.Id }, place);
+        }
     }
 }
