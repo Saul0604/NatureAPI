@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatureAPI", "NatureAPI\NatureAPI.csproj", "{EE2D6841-57EE-47C3-B0F1-11D1A0FDCD31}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{669BEB71-2A1B-4B6F-AD1D-83DCB5995106}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatureAPI.Models", "NatureAPI.Models\NatureAPI.Models.csproj", "{82B1D7DE-AD2E-49F5-BB34-663E5615C0D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE2D6841-57EE-47C3-B0F1-11D1A0FDCD31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE2D6841-57EE-47C3-B0F1-11D1A0FDCD31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE2D6841-57EE-47C3-B0F1-11D1A0FDCD31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE2D6841-57EE-47C3-B0F1-11D1A0FDCD31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82B1D7DE-AD2E-49F5-BB34-663E5615C0D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82B1D7DE-AD2E-49F5-BB34-663E5615C0D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82B1D7DE-AD2E-49F5-BB34-663E5615C0D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82B1D7DE-AD2E-49F5-BB34-663E5615C0D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
