@@ -16,7 +16,7 @@ namespace NatureAPI.Controllers
             _context = context;
         }
         
-        // GET /api/places
+        // GET /api/places?category=&difficulty=
         [HttpGet]
         public async Task<ActionResult<List<Place>>> GetPlaces(
             [FromQuery] string? category,
