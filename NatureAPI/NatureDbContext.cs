@@ -63,5 +63,19 @@ public class NatureDbContext : DbContext
             new Place { Id = 9, Name = "Mirador de la Peña", Description = "Mirador en Bernal, Queretáro", Category = "Mirador", Latitude = 20.667, Longitude = -100.123, ElevationMeters = 2100, Accessible = true, EntryFee = 15, OpeningHours = "06:00-19:00", CreatedAt = new DateTime(2025, 9, 12, 3, 52, 0) },
             new Place { Id = 10, Name = "Parque Nacional Nevado de Toluca", Description = "Parque con montaña y lagunas", Category = "Parque", Latitude = 19.118, Longitude = -99.767, ElevationMeters = 4600, Accessible = true, EntryFee = 50, OpeningHours = "07:00-18:00", CreatedAt = new DateTime(2025, 9, 12, 3, 52, 0) }
         );
+        
+        // Seeds de datos Trails
+        modelBuilder.Entity<Trail>().HasData(
+            new Trail{ Id = 1, PlaceId = 1, Name = "Sendero Volcán", DistanceKm = 5.0, EstimatedTimeMinutes = 180, Difficulty = "Media", Path = "[[19.2200, -98.6570], [19.2220, -98.6630], [19.2200, -98.6570]]", IsLoop = true},
+            new Trail{ Id = 2, PlaceId = 1, Name = "Mirador Principal", DistanceKm = 2.0, EstimatedTimeMinutes = 60, Difficulty = "Baja", Path = "[[25.1230, -99.1230], [25.1240, -99.1245], [25.1255, -99.1260]]", IsLoop = false},
+            new Trail{ Id = 3, PlaceId = 2, Name = "Camino Cascada", DistanceKm = 1.5, EstimatedTimeMinutes = 40, Difficulty = "Baja", Path = "[[25.6750, -100.3090], [25.6765, -100.3075], [25.6780, -100.3060]]", IsLoop = false},
+            new Trail{ Id = 4, PlaceId = 3, Name = "Subida Mirador", DistanceKm = 1.2, EstimatedTimeMinutes = 45, Difficulty = "Media", Path = "[[25.6780, -100.2340], [25.6800, -100.2330], [25.6815, -100.2320], [25.6780, -100.2340]]", IsLoop = true},
+            new Trail{ Id = 5, PlaceId = 4, Name = "Circuito Chipinque", DistanceKm = 3.5, EstimatedTimeMinutes = 90, Difficulty = "Media", Path = "[[27.0820, -107.8670], [27.0835, -107.8650], [27.0850, -107.8630]]", IsLoop = true},
+            new Trail{ Id = 6, PlaceId = 5, Name = "Caminata Basaseachic", DistanceKm = 2.5, EstimatedTimeMinutes = 80, Difficulty = "Alta", Path = "[[22.7710, -102.5830], [22.7715, -102.5820], [22.7720, -102.5810]]", IsLoop = false},
+            new Trail{ Id = 7, PlaceId = 6, Name = "Ruta La Bufa", DistanceKm = 1.0, EstimatedTimeMinutes = 30, Difficulty = "Baja", Path = "[[25.4100, -100.2470], [25.4120, -100.2455], [25.4150, -100.2440], [25.4100, -100.2470]]", IsLoop = false},
+            new Trail{ Id = 8, PlaceId = 7, Name = "Sendero Monterrey", DistanceKm = 6.0, EstimatedTimeMinutes = 200, Difficulty = "Alta", Path = "[[27.0370, -98.6570], [27.0385, -98.6555], [27.0400, -98.6540]]", IsLoop = true},
+            new Trail{ Id = 9, PlaceId = 8, Name = "Camino Piedra Volada", DistanceKm = 3.0, EstimatedTimeMinutes = 100, Difficulty = "Media", Path = "[[20.6670, -100.1230], [20.6685, -100.1215], [20.6700, -100.1200]]", IsLoop = false},
+            new Trail{ Id = 10, PlaceId = 9, Name = "Subida Peña", DistanceKm = 1.8, EstimatedTimeMinutes = 50, Difficulty = "Media", Path = "[[19.1180, -99.7670], [19.1200, -99.7650], [19.1220, -99.7630], [19.1180, -99.7670]]", IsLoop = true}
+        );
     }
 }
