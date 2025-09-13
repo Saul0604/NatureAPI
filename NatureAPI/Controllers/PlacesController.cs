@@ -45,7 +45,7 @@ namespace NatureAPI.Controllers
         }
         
         // GET /api/places/{id}
-        [HttpGet("{id")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Place>> GetPlace(int id)
         {
             var place = await _context.Places
