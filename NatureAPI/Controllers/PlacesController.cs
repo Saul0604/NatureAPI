@@ -94,7 +94,42 @@ namespace NatureAPI.Controllers
             if (place == null)
                 return NotFound();
 
-            return place;
+            var placeDto = new PlaceDto
+            {
+                Id = place.Id,
+                Name = place.Name,
+                Description = place.Description,
+                Category = place.Category,
+                Latitude = place.Latitude,
+                Longitude = place.Longitude,
+                ElevationMeters = place.ElevationMeters,
+                Accessible = place.Accessible,
+                EntryFee = place.EntryFee,
+                OpeningHours = place.OpeningHours,
+                Trails = place.Trails.Select(t => new TrailDto
+                {
+                    Id = t.Id,
+                    Name = t.Name,
+                    DistanceKm = t.DistanceKm,
+                    EstimatedTimeMinutes = t.EstimatedTimeMinutes,
+                    Difficulty = t.Difficulty,
+                    Path = t.Path,
+                    IsLoop = t.IsLoop
+                }).ToList(),
+                Photos = place.Photos.Select(ph => new PhotoDto
+                {
+                    Id = ph.Id,
+                    PlaceId = ph.PlaceId,
+                    Url = ph.Url
+                }).ToList(),
+                Amenities = place.PlaceAmenities.Select(pa => new AmenityDto
+                {
+                    Id = pa.Amenity.Id,
+                    Name = pa.Amenity.Name
+                }).ToList()
+            };
+            
+            return Ok(placeDto);
         }
         
         // POST /api/places
