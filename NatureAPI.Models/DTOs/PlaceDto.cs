@@ -15,4 +15,5 @@ public class PlaceDto
 
     public List<TrailDto> Trails { get; set; }
     public List<PhotoDto> Photos { get; set; }
+    public List<AmenityDto> Amenities { get; set; }
 }
