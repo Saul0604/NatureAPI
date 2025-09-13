@@ -91,5 +91,19 @@ public class NatureDbContext : DbContext
             new Photo{ Id = 9, PlaceId = 9, Url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Mirador_de_la_Pe%C3%B1a.jpg/1200px-Mirador_de_la_Pe%C3%B1a.jpg"},
             new Photo{ Id = 10, PlaceId = 10, Url = "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/201000/201283-Nevado-De-Toluca-National-Park.jpg"}
         );
+        
+        // Seed de Amenities
+        modelBuilder.Entity<Amenity>().HasData(
+            new Amenity{ Id = 1, Name = "Baños" },
+            new Amenity{ Id = 2, Name = "Estacionamiento" },
+            new Amenity{ Id = 3, Name = "Mirador" },
+            new Amenity{ Id = 4, Name = "Zona de Picnic" },
+            new Amenity{ Id = 5, Name = "Área de Camping" },
+            new Amenity{ Id = 6, Name = "Señalización" },
+            new Amenity{ Id = 7, Name = "Sendero Guiado" },
+            new Amenity{ Id = 8, Name = "Restaurante" },
+            new Amenity{ Id = 9, Name = "Área de Observación" },
+            new Amenity{ Id = 10, Name = "Wi-Fi" }
+        );
     }
 }
