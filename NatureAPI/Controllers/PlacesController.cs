@@ -43,5 +43,22 @@ namespace NatureAPI.Controllers
             var result = await query.ToListAsync();
             return result;
         }
+        
+        // GET /api/places/{id}
+        [HttpGet("{id")]
+        public async Task<ActionResult<Place>> GetPlace(int id)
+        {
+            var place = await _context.Places
+                .Include(p => p.Trails)
+                .Include(p => p.Photos)
+                .Include(p => p.PlaceAmenities)
+                .ThenInclude(pa => pa.Amenity)
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (place == null)
+                return NotFound();
+
+            return place;
+        }
     }
 }
