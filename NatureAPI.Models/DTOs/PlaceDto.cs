@@ -12,4 +12,6 @@ public class PlaceDto
     public bool Accessible { get; set; }
     public double EntryFee { get; set; }
     public string OpeningHours { get; set; }
+
+    public List<TrailDto> Trails { get; set; }
 }
