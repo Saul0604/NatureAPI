@@ -77,5 +77,7 @@ public class NatureDbContext : DbContext
             new Trail{ Id = 9, PlaceId = 8, Name = "Camino Piedra Volada", DistanceKm = 3.0, EstimatedTimeMinutes = 100, Difficulty = "Media", Path = "[[20.6670, -100.1230], [20.6685, -100.1215], [20.6700, -100.1200]]", IsLoop = false},
             new Trail{ Id = 10, PlaceId = 9, Name = "Subida Peña", DistanceKm = 1.8, EstimatedTimeMinutes = 50, Difficulty = "Media", Path = "[[19.1180, -99.7670], [19.1200, -99.7650], [19.1220, -99.7630], [19.1180, -99.7670]]", IsLoop = true}
         );
+        
+        
     }
 }
