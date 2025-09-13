@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NatureAPI.Models.DTOs;
 using NatureAPI.Models.Entities;
 
 namespace NatureAPI.Controllers
@@ -40,8 +41,43 @@ namespace NatureAPI.Controllers
                 query = query.Where(p => p.Trails.Any(t => t.Difficulty == difficulty));
             }
 
-            var result = await query.ToListAsync();
-            return result;
+            var result = await query
+                .Select(p => new PlaceDto
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Description = p.Description,
+                    Category = p.Category,
+                    Latitude = p.Latitude,
+                    Longitude = p.Longitude,
+                    ElevationMeters = p.ElevationMeters,
+                    Accessible = p.Accessible,
+                    EntryFee = p.EntryFee,
+                    OpeningHours = p.OpeningHours,
+                    Trails = p.Trails.Select(t => new TrailDto
+                    {
+                        Id = t.Id,
+                        Name = t.Name,
+                        DistanceKm = t.DistanceKm,
+                        EstimatedTimeMinutes = t.EstimatedTimeMinutes,
+                        Difficulty = t.Difficulty,
+                        Path = t.Path,
+                        IsLoop = t.IsLoop
+                    }).ToList(),
+                    Photos = p.Photos.Select(ph => new PhotoDto
+                    {
+                        Id = ph.Id,
+                        PlaceId = ph.PlaceId,
+                        Url = ph.Url,
+                    }).ToList(),
+                    Amenities = p.PlaceAmenities.Select(pa => new AmenityDto
+                    {
+                        Id = pa.Amenity.Id,
+                        Name = pa.Amenity.Name
+                    }).ToList()
+                })
+                .ToListAsync();
+            return Ok(result);
         }
         
         // GET /api/places/{id}
