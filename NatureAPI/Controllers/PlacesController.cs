@@ -19,7 +19,7 @@ namespace NatureAPI.Controllers
         
         // GET /api/places?category=&difficulty=
         [HttpGet]
-        public async Task<ActionResult<List<Place>>> GetPlaces(
+        public async Task<ActionResult<List<Place>>> GetPlacesByCategoryAndDifficulty(
             [FromQuery] string? category,
             [FromQuery] string? difficulty
         )
