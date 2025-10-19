@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NatureAPI;
 
@@ -11,9 +12,11 @@ using NatureAPI;
 namespace NatureAPI.Migrations
 {
     [DbContext(typeof(NatureDbContext))]
-    partial class NatureDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251019012124_newPlaces")]
+    partial class newPlaces
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -227,7 +230,7 @@ namespace NatureAPI.Migrations
                             Id = 1,
                             Accessible = true,
                             Category = "Parque",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(1233),
+                            CreatedAt = new DateTime(2025, 10, 18, 19, 21, 23, 411, DateTimeKind.Local).AddTicks(2085),
                             Description = "Formaciones rocosas únicas en Zacatecas",
                             ElevationMeters = 2300,
                             EntryFee = 40.0,
@@ -241,7 +244,7 @@ namespace NatureAPI.Migrations
                             Id = 2,
                             Accessible = true,
                             Category = "Cascada",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6789),
+                            CreatedAt = new DateTime(2025, 10, 18, 19, 21, 23, 411, DateTimeKind.Local).AddTicks(7765),
                             Description = "Cascada impresionante en San Luis Potosí",
                             ElevationMeters = 200,
                             EntryFee = 20.0,
@@ -255,7 +258,7 @@ namespace NatureAPI.Migrations
                             Id = 3,
                             Accessible = true,
                             Category = "Mirador",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6796),
+                            CreatedAt = new DateTime(2025, 10, 18, 19, 21, 23, 411, DateTimeKind.Local).AddTicks(7773),
                             Description = "Vista panorámica de la ciudad de plata",
                             ElevationMeters = 1800,
                             EntryFee = 0.0,
@@ -269,7 +272,7 @@ namespace NatureAPI.Migrations
                             Id = 4,
                             Accessible = true,
                             Category = "Parque",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6798),
+                            CreatedAt = new DateTime(2025, 10, 18, 19, 21, 23, 411, DateTimeKind.Local).AddTicks(7774),
                             Description = "Lagos de agua cristalina en Chiapas",
                             ElevationMeters = 1500,
                             EntryFee = 30.0,
@@ -283,7 +286,7 @@ namespace NatureAPI.Migrations
                             Id = 5,
                             Accessible = false,
                             Category = "Cascada",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6799),
+                            CreatedAt = new DateTime(2025, 10, 18, 19, 21, 23, 411, DateTimeKind.Local).AddTicks(7776),
                             Description = "Cascada en Chihuahua rodeada de cañones",
                             ElevationMeters = 1700,
                             EntryFee = 25.0,
@@ -297,7 +300,7 @@ namespace NatureAPI.Migrations
                             Id = 6,
                             Accessible = true,
                             Category = "Mirador",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6800),
+                            CreatedAt = new DateTime(2025, 10, 18, 19, 21, 23, 411, DateTimeKind.Local).AddTicks(7777),
                             Description = "Vista de la ciudad de Guaymas",
                             ElevationMeters = 600,
                             EntryFee = 10.0,
@@ -311,7 +314,7 @@ namespace NatureAPI.Migrations
                             Id = 7,
                             Accessible = true,
                             Category = "Parque",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6802),
+                            CreatedAt = new DateTime(2025, 10, 18, 19, 21, 23, 411, DateTimeKind.Local).AddTicks(7779),
                             Description = "Lagos rodeados de bosque",
                             ElevationMeters = 2800,
                             EntryFee = 35.0,
@@ -325,7 +328,7 @@ namespace NatureAPI.Migrations
                             Id = 8,
                             Accessible = true,
                             Category = "Cascada",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6803),
+                            CreatedAt = new DateTime(2025, 10, 18, 19, 21, 23, 411, DateTimeKind.Local).AddTicks(7780),
                             Description = "Cascada espectacular en Chiapas",
                             ElevationMeters = 500,
                             EntryFee = 25.0,
@@ -339,7 +342,7 @@ namespace NatureAPI.Migrations
                             Id = 9,
                             Accessible = true,
                             Category = "Mirador",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6805),
+                            CreatedAt = new DateTime(2025, 10, 18, 19, 21, 23, 411, DateTimeKind.Local).AddTicks(7781),
                             Description = "Símbolo de Monterrey con vistas panorámicas",
                             ElevationMeters = 1800,
                             EntryFee = 0.0,
@@ -353,7 +356,7 @@ namespace NatureAPI.Migrations
                             Id = 10,
                             Accessible = true,
                             Category = "Parque",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6806),
+                            CreatedAt = new DateTime(2025, 10, 18, 19, 21, 23, 411, DateTimeKind.Local).AddTicks(7794),
                             Description = "Arrecife de coral en Baja California Sur",
                             ElevationMeters = 0,
                             EntryFee = 50.0,

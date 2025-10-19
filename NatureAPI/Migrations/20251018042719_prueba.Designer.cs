@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NatureAPI;
 
@@ -11,9 +12,11 @@ using NatureAPI;
 namespace NatureAPI.Migrations
 {
     [DbContext(typeof(NatureDbContext))]
-    partial class NatureDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251018042719_prueba")]
+    partial class prueba
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -117,61 +120,61 @@ namespace NatureAPI.Migrations
                         {
                             Id = 1,
                             PlaceId = 1,
-                            Url = "https://example.com/sierra_organos.jpg"
+                            Url = "https://www.gob.mx/cms/uploads/article/main_image/27513/blog_izta_popo.jpg"
                         },
                         new
                         {
                             Id = 2,
                             PlaceId = 2,
-                            Url = "https://example.com/cascada_tamul.jpg"
+                            Url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRN5dNWqAwUhFHJpo0EaIQdx_tsnLG-FrjaQ&s"
                         },
                         new
                         {
                             Id = 3,
                             PlaceId = 3,
-                            Url = "https://example.com/mirador_taxco.jpg"
+                            Url = "https://imggraficos.gruporeforma.com/2023/06/2-2.jpg"
                         },
                         new
                         {
                             Id = 4,
                             PlaceId = 4,
-                            Url = "https://example.com/lagunas_montebello.jpg"
+                            Url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI_2vrL7aIS0K2cWYlFutIDKF31_RjAhifOg&s"
                         },
                         new
                         {
                             Id = 5,
                             PlaceId = 5,
-                            Url = "https://example.com/piedra_volada.jpg"
+                            Url = "https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2024/12/cascada-de-basaseachi1.jpg?fit=1500%2C1610&ssl=1"
                         },
                         new
                         {
                             Id = 6,
                             PlaceId = 6,
-                            Url = "https://example.com/cerro_campana.jpg"
+                            Url = "https://offloadmedia.feverup.com/guadalajarasecreta.com/wp-content/uploads/2022/10/07033934/cerro-de-la-bufa.jpg"
                         },
                         new
                         {
                             Id = 7,
                             PlaceId = 7,
-                            Url = "https://example.com/lagunas_zempoala.jpg"
+                            Url = "https://www.gob.mx/cms/uploads/article/main_image/28051/blog_PNCM.jpg"
                         },
                         new
                         {
                             Id = 8,
                             PlaceId = 8,
-                            Url = "https://example.com/el_chiflon.jpg"
+                            Url = "https://www.mexicodesconocido.com.mx/sites/default/files/nodes/1024/piedra-volada.jpg"
                         },
                         new
                         {
                             Id = 9,
                             PlaceId = 9,
-                            Url = "https://example.com/cerro_silla.jpg"
+                            Url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Mirador_de_la_Pe%C3%B1a.jpg/1200px-Mirador_de_la_Pe%C3%B1a.jpg"
                         },
                         new
                         {
                             Id = 10,
                             PlaceId = 10,
-                            Url = "https://example.com/cabo_pulmo.jpg"
+                            Url = "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/201000/201283-Nevado-De-Toluca-National-Park.jpg"
                         });
                 });
 
@@ -227,13 +230,13 @@ namespace NatureAPI.Migrations
                             Id = 1,
                             Accessible = true,
                             Category = "Parque",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(1233),
-                            Description = "Formaciones rocosas únicas en Zacatecas",
-                            ElevationMeters = 2300,
-                            EntryFee = 40.0,
-                            Latitude = 24.244,
-                            Longitude = -104.47,
-                            Name = "Parque Nacional Sierra de Órganos",
+                            CreatedAt = new DateTime(2025, 9, 12, 3, 52, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Parque con senderos y miradores",
+                            ElevationMeters = 3900,
+                            EntryFee = 50.0,
+                            Latitude = 19.207841800000001,
+                            Longitude = -98.664542499999996,
+                            Name = "Parque Nacional Iztaccíhuatl",
                             OpeningHours = "08:00-18:00"
                         },
                         new
@@ -241,27 +244,27 @@ namespace NatureAPI.Migrations
                             Id = 2,
                             Accessible = true,
                             Category = "Cascada",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6789),
-                            Description = "Cascada impresionante en San Luis Potosí",
-                            ElevationMeters = 200,
-                            EntryFee = 20.0,
-                            Latitude = 21.48,
-                            Longitude = -99.200000000000003,
-                            Name = "Cascada de Tamul",
-                            OpeningHours = "07:00-17:00"
+                            CreatedAt = new DateTime(2025, 9, 12, 3, 52, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Cascada famosa en Nuevo León",
+                            ElevationMeters = 50,
+                            EntryFee = 0.0,
+                            Latitude = 19.349646,
+                            Longitude = -98.232528400000007,
+                            Name = "Cascada Cola de Caballo",
+                            OpeningHours = "08:00-17:00"
                         },
                         new
                         {
                             Id = 3,
                             Accessible = true,
                             Category = "Mirador",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6796),
-                            Description = "Vista panorámica de la ciudad de plata",
+                            CreatedAt = new DateTime(2025, 9, 12, 3, 52, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Mirador icónico en Monterrey",
                             ElevationMeters = 1800,
                             EntryFee = 0.0,
-                            Latitude = 18.556000000000001,
-                            Longitude = -99.605000000000004,
-                            Name = "Mirador de Taxco",
+                            Latitude = 25.8932289,
+                            Longitude = -100.7900199,
+                            Name = "Mirador del Cerro de la Silla",
                             OpeningHours = "06:00-20:00"
                         },
                         new
@@ -269,27 +272,27 @@ namespace NatureAPI.Migrations
                             Id = 4,
                             Accessible = true,
                             Category = "Parque",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6798),
-                            Description = "Lagos de agua cristalina en Chiapas",
-                            ElevationMeters = 1500,
-                            EntryFee = 30.0,
-                            Latitude = 16.033000000000001,
-                            Longitude = -91.549999999999997,
-                            Name = "Parque Nacional Lagunas de Montebello",
-                            OpeningHours = "08:00-18:00"
+                            CreatedAt = new DateTime(2025, 9, 12, 3, 52, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Parque natural con senderos",
+                            ElevationMeters = 2000,
+                            EntryFee = 20.0,
+                            Latitude = 25.618748799999999,
+                            Longitude = -100.3628164,
+                            Name = "Parque Ecológico Chipinque",
+                            OpeningHours = "07:00-19:00"
                         },
                         new
                         {
                             Id = 5,
                             Accessible = false,
                             Category = "Cascada",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6799),
-                            Description = "Cascada en Chihuahua rodeada de cañones",
-                            ElevationMeters = 1700,
-                            EntryFee = 25.0,
-                            Latitude = 28.143000000000001,
-                            Longitude = -108.23,
-                            Name = "Cascada de Piedra Volada",
+                            CreatedAt = new DateTime(2025, 9, 12, 3, 52, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Cascada más alta de Chihuahua",
+                            ElevationMeters = 1800,
+                            EntryFee = 30.0,
+                            Latitude = 28.170499400000001,
+                            Longitude = -108.21994650000001,
+                            Name = "Cascada de Basaseacic",
                             OpeningHours = "08:00-17:00"
                         },
                         new
@@ -297,13 +300,13 @@ namespace NatureAPI.Migrations
                             Id = 6,
                             Accessible = true,
                             Category = "Mirador",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6800),
-                            Description = "Vista de la ciudad de Guaymas",
-                            ElevationMeters = 600,
+                            CreatedAt = new DateTime(2025, 9, 12, 3, 52, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Mirador panorámico en Zacatecas",
+                            ElevationMeters = 2500,
                             EntryFee = 10.0,
-                            Latitude = 27.917999999999999,
-                            Longitude = -110.88800000000001,
-                            Name = "Mirador del Cerro de la Campana",
+                            Latitude = 20.7305417,
+                            Longitude = -104.8288242,
+                            Name = "Mirador La Bufa",
                             OpeningHours = "06:00-20:00"
                         },
                         new
@@ -311,27 +314,27 @@ namespace NatureAPI.Migrations
                             Id = 7,
                             Accessible = true,
                             Category = "Parque",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6802),
-                            Description = "Lagos rodeados de bosque",
-                            ElevationMeters = 2800,
-                            EntryFee = 35.0,
-                            Latitude = 19.100000000000001,
-                            Longitude = -99.299999999999997,
-                            Name = "Parque Nacional Lagunas de Zempoala",
+                            CreatedAt = new DateTime(2025, 9, 12, 3, 52, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Parque con diversas rutas de senderismo",
+                            ElevationMeters = 2600,
+                            EntryFee = 40.0,
+                            Latitude = 25.413479299999999,
+                            Longitude = -100.32432439999999,
+                            Name = "Parque Nacional Cumbres de Monterrey",
                             OpeningHours = "07:00-18:00"
                         },
                         new
                         {
                             Id = 8,
-                            Accessible = true,
+                            Accessible = false,
                             Category = "Cascada",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6803),
-                            Description = "Cascada espectacular en Chiapas",
-                            ElevationMeters = 500,
+                            CreatedAt = new DateTime(2025, 9, 12, 3, 52, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Cascada en el cañón de Chihuahua",
+                            ElevationMeters = 1700,
                             EntryFee = 25.0,
-                            Latitude = 16.864999999999998,
-                            Longitude = -92.016000000000005,
-                            Name = "Cascada El Chiflón",
+                            Latitude = 28.142803399999998,
+                            Longitude = -108.2298299,
+                            Name = "Cascada de Piedra Volada",
                             OpeningHours = "08:00-17:00"
                         },
                         new
@@ -339,27 +342,27 @@ namespace NatureAPI.Migrations
                             Id = 9,
                             Accessible = true,
                             Category = "Mirador",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6805),
-                            Description = "Símbolo de Monterrey con vistas panorámicas",
-                            ElevationMeters = 1800,
-                            EntryFee = 0.0,
-                            Latitude = 25.893000000000001,
-                            Longitude = -100.79000000000001,
-                            Name = "Mirador del Cerro de la Silla",
-                            OpeningHours = "06:00-20:00"
+                            CreatedAt = new DateTime(2025, 9, 12, 3, 52, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Mirador en Bernal, Queretáro",
+                            ElevationMeters = 2100,
+                            EntryFee = 15.0,
+                            Latitude = 20.5387363,
+                            Longitude = -100.40367759999999,
+                            Name = "Mirador de la Peña",
+                            OpeningHours = "06:00-19:00"
                         },
                         new
                         {
                             Id = 10,
                             Accessible = true,
                             Category = "Parque",
-                            CreatedAt = new DateTime(2025, 10, 18, 19, 17, 20, 789, DateTimeKind.Local).AddTicks(6806),
-                            Description = "Arrecife de coral en Baja California Sur",
-                            ElevationMeters = 0,
+                            CreatedAt = new DateTime(2025, 9, 12, 3, 52, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Parque con montaña y lagunas",
+                            ElevationMeters = 4600,
                             EntryFee = 50.0,
-                            Latitude = 23.495000000000001,
-                            Longitude = -109.429,
-                            Name = "Parque Nacional Cabo Pulmo",
+                            Latitude = 19.1085703,
+                            Longitude = -99.757344000000003,
+                            Name = "Parque Nacional Nevado de Toluca",
                             OpeningHours = "07:00-18:00"
                         });
                 });
@@ -506,11 +509,11 @@ namespace NatureAPI.Migrations
                         {
                             Id = 1,
                             Difficulty = "Media",
-                            DistanceKm = 4.0,
-                            EstimatedTimeMinutes = 120,
+                            DistanceKm = 5.0,
+                            EstimatedTimeMinutes = 180,
                             IsLoop = true,
-                            Name = "Sendero Principal",
-                            Path = "[[24.244, -104.470],[24.245, -104.472],[24.246, -104.468]]",
+                            Name = "Sendero Volcán",
+                            Path = "[[19.2200, -98.6570], [19.2220, -98.6630], [19.2200, -98.6570]]",
                             PlaceId = 1
                         },
                         new
@@ -520,97 +523,97 @@ namespace NatureAPI.Migrations
                             DistanceKm = 2.0,
                             EstimatedTimeMinutes = 60,
                             IsLoop = false,
-                            Name = "Camino a la Cascada",
-                            Path = "[[21.480, -99.200],[21.481, -99.202],[21.482, -99.201]]",
-                            PlaceId = 2
+                            Name = "Mirador Principal",
+                            Path = "[[25.1230, -99.1230], [25.1240, -99.1245], [25.1255, -99.1260]]",
+                            PlaceId = 1
                         },
                         new
                         {
                             Id = 3,
-                            Difficulty = "Media",
-                            DistanceKm = 1.2,
+                            Difficulty = "Baja",
+                            DistanceKm = 1.5,
                             EstimatedTimeMinutes = 40,
-                            IsLoop = true,
-                            Name = "Subida al Mirador",
-                            Path = "[[18.556, -99.605],[18.557, -99.606],[18.558, -99.604]]",
-                            PlaceId = 3
+                            IsLoop = false,
+                            Name = "Camino Cascada",
+                            Path = "[[25.6750, -100.3090], [25.6765, -100.3075], [25.6780, -100.3060]]",
+                            PlaceId = 2
                         },
                         new
                         {
                             Id = 4,
                             Difficulty = "Media",
-                            DistanceKm = 3.5,
-                            EstimatedTimeMinutes = 90,
+                            DistanceKm = 1.2,
+                            EstimatedTimeMinutes = 45,
                             IsLoop = true,
-                            Name = "Circuito de las Lagunas",
-                            Path = "[[16.033, -91.550],[16.034, -91.552],[16.035, -91.551]]",
-                            PlaceId = 4
+                            Name = "Subida Mirador",
+                            Path = "[[25.6780, -100.2340], [25.6800, -100.2330], [25.6815, -100.2320], [25.6780, -100.2340]]",
+                            PlaceId = 3
                         },
                         new
                         {
                             Id = 5,
-                            Difficulty = "Alta",
-                            DistanceKm = 2.5,
-                            EstimatedTimeMinutes = 80,
-                            IsLoop = false,
-                            Name = "Caminata Piedra Volada",
-                            Path = "[[28.143, -108.230],[28.144, -108.231],[28.145, -108.229]]",
-                            PlaceId = 5
+                            Difficulty = "Media",
+                            DistanceKm = 3.5,
+                            EstimatedTimeMinutes = 90,
+                            IsLoop = true,
+                            Name = "Circuito Chipinque",
+                            Path = "[[27.0820, -107.8670], [27.0835, -107.8650], [27.0850, -107.8630]]",
+                            PlaceId = 4
                         },
                         new
                         {
                             Id = 6,
-                            Difficulty = "Baja",
-                            DistanceKm = 1.0,
-                            EstimatedTimeMinutes = 30,
+                            Difficulty = "Alta",
+                            DistanceKm = 2.5,
+                            EstimatedTimeMinutes = 80,
                             IsLoop = false,
-                            Name = "Ruta Mirador Campana",
-                            Path = "[[27.918, -110.888],[27.919, -110.889],[27.920, -110.887]]",
-                            PlaceId = 6
+                            Name = "Caminata Basaseachic",
+                            Path = "[[22.7710, -102.5830], [22.7715, -102.5820], [22.7720, -102.5810]]",
+                            PlaceId = 5
                         },
                         new
                         {
                             Id = 7,
-                            Difficulty = "Media",
-                            DistanceKm = 2.7999999999999998,
-                            EstimatedTimeMinutes = 70,
-                            IsLoop = true,
-                            Name = "Sendero Lagos",
-                            Path = "[[19.100, -99.300],[19.101, -99.301],[19.102, -99.302]]",
-                            PlaceId = 7
+                            Difficulty = "Baja",
+                            DistanceKm = 1.0,
+                            EstimatedTimeMinutes = 30,
+                            IsLoop = false,
+                            Name = "Ruta La Bufa",
+                            Path = "[[25.4100, -100.2470], [25.4120, -100.2455], [25.4150, -100.2440], [25.4100, -100.2470]]",
+                            PlaceId = 6
                         },
                         new
                         {
                             Id = 8,
-                            Difficulty = "Media",
-                            DistanceKm = 3.2000000000000002,
-                            EstimatedTimeMinutes = 80,
-                            IsLoop = false,
-                            Name = "Camino El Chiflón",
-                            Path = "[[16.865, -92.016],[16.866, -92.017],[16.867, -92.018]]",
-                            PlaceId = 8
+                            Difficulty = "Alta",
+                            DistanceKm = 6.0,
+                            EstimatedTimeMinutes = 200,
+                            IsLoop = true,
+                            Name = "Sendero Monterrey",
+                            Path = "[[27.0370, -98.6570], [27.0385, -98.6555], [27.0400, -98.6540]]",
+                            PlaceId = 7
                         },
                         new
                         {
                             Id = 9,
                             Difficulty = "Media",
-                            DistanceKm = 1.5,
-                            EstimatedTimeMinutes = 50,
-                            IsLoop = true,
-                            Name = "Subida Cerro Silla",
-                            Path = "[[25.893, -100.790],[25.894, -100.791],[25.895, -100.792]]",
-                            PlaceId = 9
+                            DistanceKm = 3.0,
+                            EstimatedTimeMinutes = 100,
+                            IsLoop = false,
+                            Name = "Camino Piedra Volada",
+                            Path = "[[20.6670, -100.1230], [20.6685, -100.1215], [20.6700, -100.1200]]",
+                            PlaceId = 8
                         },
                         new
                         {
                             Id = 10,
-                            Difficulty = "Baja",
-                            DistanceKm = 2.0,
-                            EstimatedTimeMinutes = 60,
+                            Difficulty = "Media",
+                            DistanceKm = 1.8,
+                            EstimatedTimeMinutes = 50,
                             IsLoop = true,
-                            Name = "Recorrido Arrecife",
-                            Path = "[[23.495, -109.429],[23.496, -109.430],[23.497, -109.431]]",
-                            PlaceId = 10
+                            Name = "Subida Peña",
+                            Path = "[[19.1180, -99.7670], [19.1200, -99.7650], [19.1220, -99.7630], [19.1180, -99.7670]]",
+                            PlaceId = 9
                         });
                 });
 
