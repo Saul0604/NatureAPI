@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NatureAPI;
 
@@ -11,9 +12,11 @@ using NatureAPI;
 namespace NatureAPI.Migrations
 {
     [DbContext(typeof(NatureDbContext))]
-    partial class NatureDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251019040847_UpdatedNaturePlacesData")]
+    partial class UpdatedNaturePlacesData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -123,31 +126,31 @@ namespace NatureAPI.Migrations
                         {
                             Id = 2,
                             PlaceId = 2,
-                            Url = "https://escapadas.mexicodesconocido.com.mx/wp-content/uploads/2020/10/Cascada-Cola-de-Caballo-XL-scaled.jpeg"
+                            Url = "https://nuevoleon.travel/wp-content/uploads/2023/05/Cola-de-Caballo-e1685557699991.jpg"
                         },
                         new
                         {
                             Id = 3,
                             PlaceId = 3,
-                            Url = "https://www.civitatis.com/f/mexico/monterrey/galeria/senderismo-cerro-silla4.jpg"
+                            Url = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Cerro_de_la_Silla_desde_Chipinque.jpg/1200px-Cerro_de_la_Silla_desde_Chipinque.jpg"
                         },
                         new
                         {
                             Id = 4,
                             PlaceId = 4,
-                            Url = "https://visitmexico.com/media/usercontent/6886d984e4344-chipinque-3_gmxdot_jpg"
+                            Url = "https://www.visitmexico.com/sites/default/files/2019-12/Parque%20Ecol%C3%B3gico%20Chipinque%2C%20Nuevo%20Le%C3%B3n.jpg"
                         },
                         new
                         {
                             Id = 5,
                             PlaceId = 5,
-                            Url = "https://www.gob.mx/cms/uploads/image/file/247330/Basaseachi__foto_Teresita_Lasso__18_.JPG"
+                            Url = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Basaseachic_Falls.jpg/1200px-Basaseachic_Falls.jpg"
                         },
                         new
                         {
                             Id = 6,
                             PlaceId = 6,
-                            Url = "https://www.zacatecastravel.com/img/lugares/miradorlabufa_grande.jpg"
+                            Url = "https://www.zacatecastravel.com/img/atractivo/1.jpg"
                         },
                         new
                         {
@@ -159,7 +162,7 @@ namespace NatureAPI.Migrations
                         {
                             Id = 8,
                             PlaceId = 8,
-                            Url = "https://noro.mx/wp-content/uploads/2024/08/Cascada-Piedra-Volada-renace-en-la-Sierra-Tarahumara.jpg"
+                            Url = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Cascada_Piedra_Volada.jpg/1200px-Cascada_Piedra_Volada.jpg"
                         },
                         new
                         {
@@ -171,7 +174,7 @@ namespace NatureAPI.Migrations
                         {
                             Id = 10,
                             PlaceId = 10,
-                            Url = "https://cdn.mexicodestinos.com/lugares/nevado-de-toluca-galeria.jpg"
+                            Url = "https://www.mexicodesconocido.com.mx/wp-content/uploads/2019/04/nevado-de-toluca.jpg"
                         });
                 });
 

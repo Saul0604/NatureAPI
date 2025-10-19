@@ -1,4 +1,4 @@
-services:
+﻿services:
   db:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: SQL_Server_NatureAPI

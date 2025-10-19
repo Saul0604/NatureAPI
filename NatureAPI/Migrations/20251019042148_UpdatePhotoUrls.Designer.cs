@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NatureAPI;
 
@@ -11,9 +12,11 @@ using NatureAPI;
 namespace NatureAPI.Migrations
 {
     [DbContext(typeof(NatureDbContext))]
-    partial class NatureDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251019042148_UpdatePhotoUrls")]
+    partial class UpdatePhotoUrls
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -123,7 +126,7 @@ namespace NatureAPI.Migrations
                         {
                             Id = 2,
                             PlaceId = 2,
-                            Url = "https://escapadas.mexicodesconocido.com.mx/wp-content/uploads/2020/10/Cascada-Cola-de-Caballo-XL-scaled.jpeg"
+                            Url = "https://www.zonaturistica.com/viajecito2/wp-content/uploads/2020/12/g1-cola-de-caballo-santiago.jpg"
                         },
                         new
                         {

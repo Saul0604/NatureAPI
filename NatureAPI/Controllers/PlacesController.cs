@@ -16,9 +16,50 @@ namespace NatureAPI.Controllers
         {
             _context = context;
         }
+        //GET all places
+        [HttpGet]
+        public async Task<IActionResult> GetAllPlaces()
+        {
+            var places = await _context.Places
+                .Include(p => p.Photos)
+                .Include(p => p.Trails)
+                .ToListAsync();
+    
+            var result = places.Select(p => new PlaceDto
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Description = p.Description,
+                Category = p.Category,
+                Latitude = p.Latitude,
+                Longitude = p.Longitude,
+                ElevationMeters = p.ElevationMeters,
+                Accessible = p.Accessible,
+                EntryFee = p.EntryFee,
+                OpeningHours = p.OpeningHours,
+                Photos = p.Photos.Select(ph => new PhotoDto
+                {
+                    Id = ph.Id,
+                    PlaceId = ph.PlaceId,
+                    Url = ph.Url
+                }).ToList(),
+                Trails = p.Trails.Select(t => new TrailDto
+                {
+                    Id = t.Id,
+                    Name = t.Name,
+                    DistanceKm = t.DistanceKm,
+                    EstimatedTimeMinutes = t.EstimatedTimeMinutes,
+                    Difficulty = t.Difficulty,
+                    Path = t.Path,
+                    IsLoop = t.IsLoop
+                }).ToList()
+            }).ToList();
+    
+            return Ok(result);
+        }
         
         // GET /api/places?category=&difficulty=
-        [HttpGet]
+        [HttpGet("filter")]
         public async Task<ActionResult<List<Place>>> GetPlacesByCategoryAndDifficulty(
             [FromQuery] string? category,
             [FromQuery] string? difficulty
