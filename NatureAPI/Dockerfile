@@ -1,23 +1,30 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
-USER $APP_UID
-WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
+﻿FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build-env
+WORKDIR /App
+# Copy everything
+COPY . ./
 
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-ARG BUILD_CONFIGURATION=Release
-WORKDIR /src
-COPY ["NatureAPI/NatureAPI.csproj", "NatureAPI/"]
-RUN dotnet restore "NatureAPI/NatureAPI.csproj"
-COPY . .
-WORKDIR "/src/NatureAPI"
-RUN dotnet build "./NatureAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN ls
+# Restore as distinct layers
+RUN dotnet restore
+# Build and publish a release
+RUN ls /App/NatureAPI
+RUN dotnet publish /App/NatureAPI/NatureAPI.csproj -c Release -o /App/build
 
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./NatureAPI.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:9.0
+RUN apt-get update -qq && apt-get -y install libgdiplus libc6-dev 
+RUN apt-get update && apt-get install -y wget fontconfig
+
+
+RUN mkdir -p /usr/share/fonts/truetype/poppins && \
+    wget -O /usr/share/fonts/truetype/poppins/Poppins-Regular.ttf https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Regular.ttf && \
+    wget -O /usr/share/fonts/truetype/poppins/Poppins-Bold.ttf https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Bold.ttf && \
+    fc-cache -f -v
+WORKDIR /App
+COPY --from=build-env /App/build .
+COPY ./NatureAPI/Templates ./Templates
+RUN chmod 755 /App/Rotativa/Linux/wkhtmltopdf
 ENTRYPOINT ["dotnet", "NatureAPI.dll"]
+
+ 

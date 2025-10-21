@@ -9,7 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4258651a-c765-4bad-a7db-117ba73dd7b7" name="Changes" comment="" />
+    <list default="true" id="4258651a-c765-4bad-a7db-117ba73dd7b7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.NatureAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NatureAPI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NatureAPI/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/NatureAPI/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NatureAPI/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/NatureAPI/appsettings.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,6 +132,8 @@
       <workItem from="1760802713197" duration="13013000" />
       <workItem from="1760841684807" duration="6825000" />
       <workItem from="1760850727693" duration="89000" />
+      <workItem from="1761004260212" duration="852000" />
+      <workItem from="1761077014258" duration="1024000" />
     </task>
     <servers />
   </component>
