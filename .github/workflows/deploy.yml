@@ -16,13 +16,13 @@ jobs:
         run: docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
 
       - name: Build Docker Image
-        run: docker build -t saulguadarrama495/nature-api:${{ github.sha }} .
+        run: docker build -t saulguadarrama495/natrue-api:${{ github.sha }} .
 
       - name: Tag Latest
-        run: docker tag saulguadarrama495/nature-api:${{ github.sha }} saulguadarrama495/nature-api:latest
+        run: docker tag saulguadarrama495/natrue-api:${{ github.sha }} saulguadarrama495/natrue-api:latest
 
       - name: Push Docker Image
         run: |
-          docker push saulguadarrama495/nature-api:${{ github.sha }}
-          docker push saulguadarrama495/nature-api:latest
+          docker push saulguadarrama495/natrue-api:${{ github.sha }}
+          docker push saulguadarrama495/natrue-api:latest
  

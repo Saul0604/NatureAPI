@@ -1,4 +1,4 @@
-﻿FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build-env
 WORKDIR /App
 # Copy everything
 COPY . ./
@@ -6,12 +6,13 @@ COPY . ./
 RUN ls
 # Restore as distinct layers
 RUN dotnet restore
+
 # Build and publish a release
 RUN ls /App/NatureAPI
 RUN dotnet publish /App/NatureAPI/NatureAPI.csproj -c Release -o /App/build
 
 
-# Build runtime image
+# Build runtime image 
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
 RUN apt-get update -qq && apt-get -y install libgdiplus libc6-dev 
 RUN apt-get update && apt-get install -y wget fontconfig
