@@ -26,4 +26,19 @@ jobs:
         run: |
           docker push saulguadarrama495/natrue-api:${{ github.sha }}
           docker push saulguadarrama495/natrue-api:latest
- 
+          
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to AWS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            docker pull saulguadarrama495/natrue-api:latest
+            cd containers
+            docker compose down
+            docker compose up -d --force-recreate
