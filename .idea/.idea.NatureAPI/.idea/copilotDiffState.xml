@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/NatureAPI/appsettings.Development.json">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/NatureAPI/appsettings.Development.json" />
+              <option name="originalContent" value="{&#10;  &quot;Logging&quot;: {&#10;    &quot;LogLevel&quot;: {&#10;      &quot;Default&quot;: &quot;Information&quot;,&#10;      &quot;Microsoft.AspNetCore&quot;: &quot;Warning&quot;&#10;    }&#10;  },&#10;  &quot;ConnectionStrings&quot;: {&#10;    &quot;SqlServer&quot;: &quot;una conexion segura&quot;&#10;  },&#10;  &quot;OpenAIKey&quot;: &quot;una key segura&quot;&#10;}&#10;" />
+              <option name="updatedContent" value="{&#10;  &quot;Logging&quot;: {&#10;    &quot;LogLevel&quot;: {&#10;      &quot;Default&quot;: &quot;Information&quot;,&#10;      &quot;Microsoft.AspNetCore&quot;: &quot;Warning&quot;&#10;    }&#10;  },&#10;  &quot;ConnectionStrings&quot;: {&#10;    &quot;SqlServer&quot;: &quot;Server=3.144.163.65;Database=NatureApiDB;User Id=sa;Password=Saul2004;Encrypt=True;TrustServerCertificate=True;MultipleActiveResultSets=True&quot;&#10;  },&#10;  &quot;OpenAIKey&quot;: &quot;una key segura&quot;&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

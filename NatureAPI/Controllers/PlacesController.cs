@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NatureAPI.Models.DTOs;
 using NatureAPI.Models.Entities;
+using OpenAI.Chat;
+using System.Net;
+
 
 namespace NatureAPI.Controllers
 {
@@ -11,10 +14,12 @@ namespace NatureAPI.Controllers
     public class PlacesController : ControllerBase
     {
         private readonly NatureDbContext _context;
+        private readonly IConfiguration _config;
 
-        public PlacesController(NatureDbContext context)
+        public PlacesController(NatureDbContext context, IConfiguration config)
         {
             _context = context;
+            _config = config;
         }
         //GET all places
         [HttpGet]
@@ -257,5 +262,43 @@ namespace NatureAPI.Controllers
 
             return CreatedAtAction(nameof(GetPlace), new { id = place.Id }, resultDto);
         }
-    }
-}
+
+        [HttpGet("ai-analyze")]
+        public async Task<IActionResult> AnalyzePlacesWithAI()
+        {
+            var openAIKey = _config["OpenAIKey"];
+            if (string.IsNullOrWhiteSpace(openAIKey))
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError,
+                    "OpenAIKey is not configured. Set it in appsettings, environment variables, or user-secrets.");
+            }
+
+            try
+            {
+                var client = new ChatClient(
+                    model: "gpt-5-mini",
+                    apiKey: openAIKey);
+
+                var result = await client.CompleteChatAsync(
+                    new UserChatMessage("Contestame con un hola cómo estás"));
+
+                var response = result?.Value?.Content?.FirstOrDefault()?.Text ?? string.Empty;
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                // Do not return secrets; return the message and suggest checking the key/connection.
+                return StatusCode((int)HttpStatusCode.InternalServerError,
+                    $"Error calling OpenAI API: {ex.Message}. Ensure OpenAIKey is correct and the host has internet access.");
+            }
+             // PRIMERO SE OBTIENEN LOS DATOS
+
+             // SE HACE EL PROMPT
+
+             // LA IA ANALIZA LOS DATOS Y ME RESPONDE
+
+             // SE DA UNA RESPUESTA CON LOS DATOS DE LA IA
+         }
+
+     }
+ }
