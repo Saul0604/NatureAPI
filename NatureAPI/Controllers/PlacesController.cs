@@ -275,15 +275,45 @@ namespace NatureAPI.Controllers
 
             try
             {
+                // PRIMERO SE OBTIENEN LOS DATOS
+                var places = await _context.Places
+                    .Include(p => p.Trails)
+                    .Include(p => p.Photos)
+                    .Include(p => p.PlaceAmenities)
+                    .ThenInclude(pa => pa.Amenity)
+                    .Include(p => p.Reviews)
+                    .ToListAsync();
+
+                // SE PREPARAN LOS DATOS EN FORMATO JSON
+                var placesData = places.Select(p => new
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Description = p.Description,
+                    Latitude = p.Latitude,
+                    Longitude = p.Longitude,
+                    Category = p.Category,
+                    ElevationMeters = p.ElevationMeters,
+                    Trails = p.Trails.Select(t => new { t.Name, t.Difficulty, t.DistanceKm }).ToList(),
+                    Reviews = p.Reviews.Select(r => new { r.Rating, r.Comment }).ToList()
+                }).ToList();
+
+                var jsonData = System.Text.Json.JsonSerializer.Serialize(placesData);
+
+                // SE HACE EL PROMPT CON LOS DATOS
+                var prompt = Prompts.GenerateData(jsonData);
+
+                // LA IA ANALIZA LOS DATOS
                 var client = new ChatClient(
-                    model: "gpt-5-mini",
+                    model: "gpt-4o-mini",
                     apiKey: openAIKey);
 
                 var result = await client.CompleteChatAsync(
-                    new UserChatMessage("Contestame con un hola cómo estás"));
+                    new UserChatMessage(prompt));
 
+                // SE DA UNA RESPUESTA CON LOS DATOS DE LA IA
                 var response = result?.Value?.Content?.FirstOrDefault()?.Text ?? string.Empty;
-                return Ok(response);
+                return Ok(new { prompt, response });
             }
             catch (Exception ex)
             {
@@ -291,14 +321,7 @@ namespace NatureAPI.Controllers
                 return StatusCode((int)HttpStatusCode.InternalServerError,
                     $"Error calling OpenAI API: {ex.Message}. Ensure OpenAIKey is correct and the host has internet access.");
             }
-             // PRIMERO SE OBTIENEN LOS DATOS
-
-             // SE HACE EL PROMPT
-
-             // LA IA ANALIZA LOS DATOS Y ME RESPONDE
-
-             // SE DA UNA RESPUESTA CON LOS DATOS DE LA IA
-         }
+        }
 
      }
  }

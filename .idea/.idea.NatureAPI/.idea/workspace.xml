@@ -10,7 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4258651a-c765-4bad-a7db-117ba73dd7b7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/NatureAPI/Prompts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.NatureAPI/.idea/copilotDiffState.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NatureAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NatureAPI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NatureAPI/Controllers/PlacesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NatureAPI/Controllers/PlacesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NatureAPI/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/NatureAPI/appsettings.Development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +30,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NatureAPI/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NatureAPI/Prompts.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/sagd0/OneDrive/Documents/ISSC/sexto/desarrollo de sistemas gerorreferenciados/NatureAPI/NatureAPI/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/sagd0/OneDrive/Documents/ISSC/sexto/desarrollo de sistemas gerorreferenciados/NatureAPI/NatureAPI/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
