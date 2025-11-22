@@ -287,13 +287,13 @@ namespace NatureAPI.Controllers
                 // SE PREPARAN LOS DATOS EN FORMATO JSON
                 var placesData = places.Select(p => new
                 {
-                    Id = p.Id,
-                    Name = p.Name,
-                    Description = p.Description,
-                    Latitude = p.Latitude,
-                    Longitude = p.Longitude,
-                    Category = p.Category,
-                    ElevationMeters = p.ElevationMeters,
+                    p.Id,
+                    p.Name,
+                    p.Description,
+                    p.Latitude,
+                    p.Longitude,
+                    p.Category,
+                    p.ElevationMeters,
                     Trails = p.Trails.Select(t => new { t.Name, t.Difficulty, t.DistanceKm }).ToList(),
                     Reviews = p.Reviews.Select(r => new { r.Rating, r.Comment }).ToList()
                 }).ToList();
@@ -312,8 +312,35 @@ namespace NatureAPI.Controllers
                     new UserChatMessage(prompt));
 
                 // SE DA UNA RESPUESTA CON LOS DATOS DE LA IA
-                var response = result?.Value?.Content?.FirstOrDefault()?.Text ?? string.Empty;
-                return Ok(new { prompt, response });
+                var aiResponse = result?.Value?.Content?.FirstOrDefault()?.Text ?? string.Empty;
+                
+                // Limpiar la respuesta de markdown si lo incluye
+                var cleanResponse = aiResponse.Trim();
+                if (cleanResponse.StartsWith("```json"))
+                {
+                    cleanResponse = cleanResponse.Substring(7); // Remove ```json
+                }
+                if (cleanResponse.StartsWith("```"))
+                {
+                    cleanResponse = cleanResponse.Substring(3); // Remove ```
+                }
+                if (cleanResponse.EndsWith("```"))
+                {
+                    cleanResponse = cleanResponse.Substring(0, cleanResponse.Length - 3); // Remove trailing ```
+                }
+                cleanResponse = cleanResponse.Trim();
+
+                // Intentar parsear el JSON para devolverlo estructurado
+                try
+                {
+                    var parsedResponse = System.Text.Json.JsonSerializer.Deserialize<object>(cleanResponse);
+                    return Ok(parsedResponse);
+                }
+                catch
+                {
+                    // Si falla el parseo, devolver la respuesta limpia como texto
+                    return Ok(new { response = cleanResponse, note = "Response could not be parsed as JSON" });
+                }
             }
             catch (Exception ex)
             {

@@ -11,7 +11,7 @@ public static class Prompts
             Eres un asistente experto en turismo y viajes en México.
             Analiza los siguientes datos sobre lugares naturales en México (en JSON): {jsonData}
             
-            Debes responder **exclusivamente** en formato JSON válido con la siguiente estructura:
+            Debes responder ÚNICAMENTE con un objeto JSON válido (SIN bloques de código markdown, SIN ```json, SIN texto adicional) con la siguiente estructura:
             {{
                 ""DatoCurioso"": ""string con un dato interesante o curiosidad histórica del lugar"",
                 ""HotelesCercanos"": [
@@ -32,15 +32,13 @@ public static class Prompts
                 ]
             }}
             
-            IMPORTANTE: 
+            REGLAS ESTRICTAS: 
             - Proporciona de 2 a 3 hoteles y 2 a 3 restaurantes cercanos al lugar.
             - Si no encuentras información exacta, proporciona opciones realistas basadas en la ubicación.
             - Todos los valores deben ser strings válidos.
-            - NO incluyas texto adicional fuera del JSON.
-            - Asegúrate de que el JSON sea válido y parseable.
-        
-
-            SI NO puedes cumplir con estas instrucciones, responde **solo** con 'error'.
-            No saludes, no des explicaciones, no agregues texto adicional.";
+            - Tu respuesta debe ser SOLO el objeto JSON, sin markdown, sin bloques de código, sin explicaciones.
+            - NO uses ```json ni ``` en tu respuesta.
+            - Empieza directamente con {{ y termina con }}.
+        ";
     }
 }

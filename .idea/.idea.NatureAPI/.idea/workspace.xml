@@ -9,13 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4258651a-c765-4bad-a7db-117ba73dd7b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NatureAPI/Prompts.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.NatureAPI/.idea/copilotDiffState.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.NatureAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NatureAPI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NatureAPI/Controllers/PlacesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NatureAPI/Controllers/PlacesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NatureAPI/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/NatureAPI/appsettings.Development.json" afterDir="false" />
-    </list>
+    <list default="true" id="4258651a-c765-4bad-a7db-117ba73dd7b7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
