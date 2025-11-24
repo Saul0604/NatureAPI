@@ -264,7 +264,7 @@ namespace NatureAPI.Controllers
         }
 
         [HttpGet("ai-analyze")]
-        public async Task<IActionResult> AnalyzePlacesWithAI()
+        public async Task<IActionResult> AnalyzePlacesWithAI([FromQuery] int? placeId)
         {
             var openAIKey = _config["OpenAIKey"];
             if (string.IsNullOrWhiteSpace(openAIKey))
@@ -275,19 +275,32 @@ namespace NatureAPI.Controllers
 
             try
             {
-                // PRIMERO SE OBTIENEN LOS DATOS
-                var places = await _context.Places
+                // PRIMERO SE OBTIENEN LOS DATOS - Si viene placeId, filtrar por ese lugar
+                var query = _context.Places
                     .Include(p => p.Trails)
                     .Include(p => p.Photos)
                     .Include(p => p.PlaceAmenities)
                     .ThenInclude(pa => pa.Amenity)
                     .Include(p => p.Reviews)
-                    .ToListAsync();
+                    .AsQueryable();
+
+                // Si se proporciona un placeId, filtrar solo ese lugar
+                if (placeId.HasValue)
+                {
+                    query = query.Where(p => p.Id == placeId.Value);
+                }
+
+                var places = await query.ToListAsync();
+
+                if (!places.Any())
+                {
+                    return NotFound("No se encontró el lugar especificado.");
+                }
 
                 // SE PREPARAN LOS DATOS EN FORMATO JSON
                 var placesData = places.Select(p => new
                 {
-                    p.Id,
+                     p.Id,
                     p.Name,
                     p.Description,
                     p.Latitude,
@@ -300,8 +313,18 @@ namespace NatureAPI.Controllers
 
                 var jsonData = System.Text.Json.JsonSerializer.Serialize(placesData);
 
-                // SE HACE EL PROMPT CON LOS DATOS
-                var prompt = Prompts.GenerateData(jsonData);
+                // SE HACE EL PROMPT CON LOS DATOS - usar el prompt apropiado según el caso
+                string prompt;
+                if (placeId.HasValue)
+                {
+                    // Usar el prompt específico para un solo lugar
+                    prompt = Prompts.GenerateDataForSinglePlace(jsonData);
+                }
+                else
+                {
+                    // Usar el prompt original para todos los lugares
+                    prompt = Prompts.GenerateData(jsonData);
+                }
 
                 // LA IA ANALIZA LOS DATOS
                 var client = new ChatClient(
