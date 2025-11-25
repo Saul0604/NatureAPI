@@ -262,6 +262,7 @@ namespace NatureAPI.Controllers
 
             return CreatedAtAction(nameof(GetPlace), new { id = place.Id }, resultDto);
         }
+        [HttpGet("prueba deploy")]
         
 
         [HttpGet("ai-analyze")]
